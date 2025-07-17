@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="icon" href="https://cdn.logo.com/hotlink-ok/logo-social.png" type="image/png">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="#home">
+                    <img src="https://cdn.logo.com/hotlink-ok/logo-social.png" alt="Logo Perusahaan" class="logo-img">
+                </a>
+            </div>
+
+            <button class="hamburger-menu" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="main-nav" class="main-nav">
+                <ul>
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#profile" class="nav-link">Our Profile</a></li>
+                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li><a href="#message-us" class="nav-link">Message Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="page-section active">
+            <div class="hero-banner">
+                <div class="hero-content">
+                    <h2 id="welcome-greeting" class="welcome-text">Hi, Welcome To Website</h2>
+                    <p class="welcome-subtitle">Ini adalah website Mini Project Revou</p>
+                </div>
+            </div>
+            
+            <div class="headquarters container">
+                <h2 class="section-title">Our Headquarter</h2>
+                <div class="hq-locations">
+                    <div class="location">
+                        <div class="circle">
+                            <img src="https://www.indonesia.travel/content/dam/indtravelrevamp/en/destinations/java/dki-jakarta/jakarta/9fe4c537ae976df197ea11dfbd43e42e8a886816-cd2d9.jpg" alt="Jakarta HQ">
+                        </div>
+                        <p>Jakarta</p>
+                    </div>
+                    <div class="location">
+                        <div class="circle">
+                            <img src="https://static.dw.com/image/44565755_605.webp" alt="Bandung HQ">
+                        </div>
+                        <p>Bandung</p>
+                    </div>
+                    <div class="location">
+                        <div class="circle">
+                            <img src="https://www.goersapp.com/blog/wp-content/uploads/2024/12/15-Rekomendasi-Wisata-Surabaya-yang-Murah-Tapi-Keren-2024.webp" alt="Surabaya HQ">
+                        </div>
+                        <p>Surabaya</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="profile" class="page-section container">
+            <div class="banner">
+                <h1>Profil Perusahaan</h1>
+            </div>
+            <div class="profile-content">
+                <div class="profile-card">
+                    <h3>Tentang Perusahaan</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div class="profile-card">
+                    <h3>Visi & Misi</h3>
+                    <p><strong>Visi:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
+                    <p><strong>Misi:</strong></p>
+                    <ul>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                        <li>consectetur adipiscing elit.</li>
+                        <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="portfolio" class="page-section container">
+            <h2 class="section-title">Portfolio Kami</h2>
+            <p class="portfolio-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="portfolio-grid">
+                <div class="portfolio-item"><span>Project Alpha</span></div>
+                <div class="portfolio-item"><span>Project Beta</span></div>
+                <div class="portfolio-item"><span>Project Gamma</span></div>
+                <div class="portfolio-item"><span>Project Delta</span></div>
+            </div>
+        </section>
+
+        <section id="message-us" class="page-section container">
+            <h2 class="section-title">Message Us</h2>
+            <div class="content-wrapper">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="nama">Nama</label>
+                        <input type="text" id="nama" name="nama" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tanggal-lahir">Tanggal Lahir</label>
+                        <input type="date" id="tanggal-lahir" name="tanggal-lahir" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="jenis-kelamin">Jenis Kelamin</label>
+                        <select id="jenis-kelamin" name="jenis-kelamin" required>
+                            <option value="">-- Pilih --</option>
+                            <option value="Laki-laki">Laki-laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="telepon">Nomor Telepon</label>
+                        <input type="tel" id="telepon" name="telepon" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pesan">Pesan</label>
+                        <textarea id="pesan" name="pesan" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+                <div id="form-output">
+                    <h3>Submitted Data:</h3>
+                    <p id="output-content">Data yang Anda kirimkan akan muncul di sini.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>Created By Muhammad Rafli</p>
+    </footer>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
