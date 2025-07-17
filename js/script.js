@@ -13,13 +13,27 @@ document.addEventListener('DOMContentLoaded', function() {
         hamburger.setAttribute('aria-expanded', isExpanded);
     });
 
-    // Pesan Selamat Datang Dinamis
+    // Pesan Selamat Datang Dinamis dengan AlertifyJS
     const welcomeGreeting = document.getElementById('welcome-greeting');
-    // Menggunakan nama default jika pengguna membatalkan prompt
-    const userName = prompt("Halo! Silakan masukkan nama Anda:", "Pengunjung") || "Pengunjung";
-    if (userName) {
-        welcomeGreeting.textContent = `Hi ${userName}, Welcome To Website`;
-    }
+    alertify.prompt(
+        'Halo! Silakan masukkan nama Anda:', 
+        'Pengunjung',  
+        function(evt, value) {
+            const finalValue = value.trim() === '' ? 'Pengunjung' : value;
+            welcomeGreeting.textContent = `Hi ${finalValue}, Welcome To Website`;
+            alertify.success('Selamat datang, ' + finalValue + '!');
+        }, 
+        function() {
+            welcomeGreeting.textContent = `Hi Pengunjung, Welcome To Website`;
+            alertify.message('Anda membatalkan, selamat datang Pengunjung.');
+        }
+    ).set({
+        'title': 'Selamat Datang',
+        'pinnable': false, 
+        'closable': false
+    });
+    
+    document.querySelector('.ajs-buttons .ajs-cancel').style.display = 'none';
 
     // Logika Navigasi Satu Halaman
     const navLinks = document.querySelectorAll('.nav-link');
@@ -45,13 +59,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 section.classList.toggle('active', section.id === targetId);
             });
         
-            // Gulir halus ke bagian section
+            // Gulir halus ke bagian yang dituju
             document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
         });
     });
 
 
-    // Validasi dan Pengiriman Formulir
+    // Validasi dan Pengiriman Formulir dengan AlertifyJS
     const contactForm = document.getElementById('contact-form');
     const outputContent = document.getElementById('output-content');
     
@@ -68,19 +82,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Pemeriksaan validasi dasar
         if (!nama || !email || !telepon || !pesan || !tanggalLahir || !jenisKelamin) {
-            alert('Harap lengkapi semua kolom.');
+            alertify.error('Harap lengkapi semua kolom.');
             return;
         }
 
         // Validasi format khusus
         const emailRegex = /^\S+@\S+\.\S+$/;
         if (!emailRegex.test(email)) {
-            alert('Format email tidak valid.');
+            alertify.error('Format email tidak valid.');
             return;
         }
 
         if (!/^\d+$/.test(telepon)) {
-            alert('Nomor telepon hanya boleh berisi angka.');
+            alertify.error('Nomor telepon hanya boleh berisi angka.');
             return;
         }
 
@@ -100,6 +114,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         contactForm.reset();
         
-        alert('Pesan Anda berhasil dikirim!');
+        alertify.success('Pesan Anda berhasil dikirim!');
     });
 });
